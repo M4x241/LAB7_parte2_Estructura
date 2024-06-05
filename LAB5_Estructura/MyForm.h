@@ -1086,13 +1086,13 @@ private: System::Void boxRecetas_SelectedIndexChanged(System::Object^ sender, Sy
 	}
 	else {
 		MessageBox::Show("No hay recetas");
-		errorProvider1->SetError(boxRecetas, "Seleccione una receta");
+		errorProvider1->SetError(boxRecetas, "Seleccione");
 	}
 }
 private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
 	Categorias^ cat = lista->buscarCategoria(boxCategorias->SelectedItem->ToString());
 	if (cat != nullptr) {
-		Receta^ rec = cat->buscarReceta(textBox17->Text);
+		Receta^ rec = cat->buscarReceta(textBox15->Text);
 		if (rec != nullptr) {
 			cat->eliminarReceta(rec->Nombre);
 		}
